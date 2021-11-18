@@ -1,0 +1,11 @@
+.chat-box{
+    display: flex;
+    width: 300px;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 20px;
+}
+.chat-room{
+    display: flex;
+    background-color: red;
+}

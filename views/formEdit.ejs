@@ -1,0 +1,18 @@
+<%- include('partials/head', {title: 'Form Buy'}) %>
+<%- include('partials/navbar') %>
+<body>
+    <form action="/cart/<%= destId %>/<%= dataCust.id %>/edit" method="POST">
+        <h3><%= dataCust.firstName %> Cart</h3><br>
+        <input type="hidden" value="<%= dataCust.id %>" name="ProfileId">
+        <Label>Location</Label><br>
+        <select name="DestinationId">
+            <option selected>Choose Location</option> 
+            <% destData.forEach(element => {%>
+                <option value="<%= element.id %>" name="DestinationId" <%= dataCust.Destinations.id == element.id ? "selected":"" %>><%= element.location %></option> 
+            <% });  %> 
+        </select><br>
+        <input type="date" name="date">
+        <input type="submit" value="Change">
+    </form>
+</body>
+</html>

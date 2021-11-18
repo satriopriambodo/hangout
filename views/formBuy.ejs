@@ -1,0 +1,15 @@
+<%- include('partials/head', {title: 'Form Buy'}) %>
+<%- include('partials/navbar') %>
+
+<body>
+    <form action="/destinations/buy" method="POST">
+            <h3>Select your trip date to:</h3>
+            <h4><%= location %></h4>
+
+            <input type="hidden" value="<%= destId %>" name="DestinationId">
+            <label>Tanggal Keberangkatan</label><br>
+            <input type="date" name="date"><br>
+        <input type="submit" value="Buy">
+    </form>
+</body>
+</html>

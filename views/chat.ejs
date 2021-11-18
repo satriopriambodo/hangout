@@ -1,0 +1,40 @@
+<%- include('partials/head', {title: 'Form Buy'}) %>
+<%- include('partials/navbar') %>
+<style>
+    .chat-messages {
+    background-color: lightgray;
+    width: 500px;
+    height: 300px;
+    overflow: scroll;
+    padding: 5px; 
+    border-style: solid;
+  }
+  
+
+  </style>
+<body>
+    <main class="chat-main" style="border: 1000px;">
+        <div class="chat-room d-flex p-2 bd-highlight" >
+            <h3>Chat Room</h3>
+        </div>
+        <div class="chat-box d-flex p-2 bd-highlight container">
+            <div class="chat-messages" style="border-style: solid"></div>
+
+        </div>
+    </main>
+        <div class="chat-form-container container">
+            <form id="chat-form">
+                <input
+                id="msg"
+                type="text"
+                placeholder="Enter Message"
+                />
+                <button class="btn btn-outline-primary">Send</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./partials/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<%- include('partials/head', {title: 'Form Buy'}) %>
+<%- include('partials/navbar') %>
+<body>
+    <h3><%= dataCust.firstName%> cart</h3>
+    <table border>
+        <tr>
+            <th>Location</th>
+            <th>Lodging</th>
+            <th>Meals</th>
+            <th>Transport</th>
+            <th>Price</th>
+            <th>Depart Time</th>
+            <th>Action</th>
+        </tr>
+        <%dataCust.Destinations.forEach(element => {%>
+            <tr>
+                <td><%= element.location %> </td>
+                <td><%= element.lodging %> </td>
+                <td><%= element.meals %> </td>
+                <td><%= element.transport %> </td>
+                <td><%= element.price %> </td>
+                <td><Input type="date" name='date' value=<%= element.DestinationProfile.date %>></Input></td>
+                <td><a class="btn btn-danger" href="/cart/<%= element.id %>/<%= dataCust.id %> /delete ">Delete</a>|<a class="btn btn-warning" href="/cart/<%= element.DestinationProfile.id %>/<%= element.id %>/<%= dataCust.id %>/edit">Change</a></td>
+            </tr>
+        <%});  %> 
+    </table>
+</body>
+</html>

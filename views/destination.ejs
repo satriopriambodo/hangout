@@ -1,0 +1,19 @@
+<%- include('partials/head', {title: 'Form Buy'}) %>
+<%- include('partials/navbar') %>
+<body>
+    <table border='1'>
+        <tr>
+            <th>Location</th>
+            <th>Lodging</th>
+            <th>Photo</th>
+        </tr>
+        <%data.forEach(element => {%>
+            <tr>
+                <td><%= element.location %> </td>
+                <td><%= element.lodging %> </td>
+                <td><a href="/destinations/<%= element.location %> "><img src="<%= element.photo %>" alt="<%= element.location %> " border = 3 height = 100 width=100></a></td>
+            </tr>
+            <%});  %> 
+    </table>
+</body>
+</html>

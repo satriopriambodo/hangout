@@ -1,0 +1,21 @@
+<%- include('partials/head', {title: 'Form Buy'}) %>
+<%- include('partials/navbar') %>
+<body>
+    <table border="1">
+        <tr>
+            <th>Fullname</th>
+            <th>Age</th>
+            <th>Residence</th>
+            <th>Username</th>
+        </tr>
+        <tr>
+            <td><%= data.firstName %> <%=data.lastName%></td>
+            <td><%= data.age %></td>
+            <td><%= data.residence %></td>
+            <td><%= data.User.username %></td>
+        </tr><br>
+    </table><br>
+    <a class="btn btn-warning" href="/profile/<%= data.id %>/edit">Edit Profile</a> &nbsp;&nbsp;
+    <a class="btn btn-danger" href="/profile/<%= data.id %>/delete">Delete Profile</a>
+</body>
+</html>
