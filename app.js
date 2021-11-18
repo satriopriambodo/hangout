@@ -11,23 +11,14 @@ const PORT = process.env.PORT || 3000
 app.set('view engine','ejs')
 app.use(express.urlencoded({extended:false}))
 app.use(express.static('views'))
+
 app.use(session({
     secret: 'hangout',
     resave: false,
     saveUninitialized: true
-    // cookie: { secure: true }
+
 }))
 
-app.use(session({
-  secret: 'hangout',
-  resave: false,
-  saveUninitialized: true
-  // cookie: { secure: true }
-}))
-
-// app.get('/chat',(req,res)=>{
-//     res.render('chat')
-// })
 
 app.use('/',router)
 
@@ -45,11 +36,9 @@ io.on('connection',socket=>{
 })
 
 server.listen(PORT,()=>{
-    console.log(`this server run on port http://localhost:${PORT}`);
+    console.log(`this server run on port ${PORT}`);
 })
-// app.listen(PORT, () => {
-//     console.log(`Example app listening at http://localhost:${PORT}`)
-//   }) // kalo pake app socket.io ga jalan
+
 
 
 
